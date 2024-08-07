@@ -1,7 +1,9 @@
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { MedalStar, Triangle, Unlimited } from "iconsax-react";
+
+import Modal from "@/components/globals/Modal";
 
 export default function Upgrade() {
   interface itemType {
@@ -36,6 +38,9 @@ export default function Upgrade() {
       price: 150000,
     },
   ];
+
+  const [price, setPrice] = useState(1690550);
+  const [warningModal, setWarningModal] = useState(false);
   return (
     <div className="flex flex-col gap-3">
       <h1 className="text-2xl font-bold">کسب درآمد</h1>
@@ -46,6 +51,10 @@ export default function Upgrade() {
         {items.map((item) => {
           return (
             <div
+              onClick={() => {
+                setPrice(item.price);
+                setWarningModal(true);
+              }}
               key={item.title}
               className="flex flex-col items-center gap-3 rounded-[12px] border border-primary-2 bg-primary-1 py-[20px]"
             >
@@ -70,6 +79,31 @@ export default function Upgrade() {
           تبلیغات دلخواه - Ads
         </div>
       </Link>
+      <Modal status={warningModal} close={() => setWarningModal(false)}>
+        <div className="flex flex-col gap-3 p-5">
+          <h2 className="mb-3 text-center text-2xl">هشدار</h2>
+          <p className="mb-5">
+            {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            تومان برای خرید پلن ویژه از کیف پول برداشته شود؟
+          </p>
+          <button
+            onClick={() => {
+              setWarningModal(false);
+            }}
+            className="rounded-2xl bg-secondary-1 p-3"
+          >
+            تایید
+          </button>
+          <button
+            onClick={() => {
+              setWarningModal(false);
+            }}
+            className="rounded-2xl bg-primary-2 p-3"
+          >
+            بازگشت
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 }
