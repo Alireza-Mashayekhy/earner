@@ -11,7 +11,12 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { ArrowLeft2, HambergerMenu, Notification } from "iconsax-react";
+import {
+  ArrowLeft2,
+  HambergerMenu,
+  LogoutCurve,
+  Notification,
+} from "iconsax-react";
 
 import { DRAWER_ITEMS } from "@/constants/data";
 
@@ -142,6 +147,14 @@ export const Header = () => {
                 </Button>
               ),
             )}
+            <Button
+              onClick={logoutHandler}
+              variant="outline"
+              className="flex w-full !items-center !justify-start gap-2 !rounded-xl border !border-[#2b323e] bg-primary-1 !text-white hover:!bg-primary-1 hover:!text-white"
+            >
+              <LogoutCurve color="red" />
+              خروج
+            </Button>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
