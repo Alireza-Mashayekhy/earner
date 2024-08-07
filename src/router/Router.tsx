@@ -6,6 +6,7 @@ import Earn from "@/pages/Earn";
 import FinancialReport from "@/pages/FinancialReport";
 import Home from "@/pages/Home";
 import Upgrade from "@/pages/Upgrade";
+import Wallet from "@/pages/Wallet";
 
 export const Router = () => {
   return (
@@ -47,6 +48,14 @@ export const Router = () => {
         element={
           <Layout>
             <Upgrade />
+          </Layout>
+        }
+      />
+      <Route
+        path="/wallet"
+        element={
+          <Layout>
+            <Wallet />
           </Layout>
         }
       />
