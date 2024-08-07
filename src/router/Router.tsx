@@ -5,6 +5,7 @@ import ActivityReport from "@/pages/ActivityReport";
 import Earn from "@/pages/Earn";
 import FinancialReport from "@/pages/FinancialReport";
 import Home from "@/pages/Home";
+import Upgrade from "@/pages/Upgrade";
 
 export const Router = () => {
   return (
@@ -38,6 +39,14 @@ export const Router = () => {
         element={
           <Layout>
             <Earn />
+          </Layout>
+        }
+      />
+      <Route
+        path="/upgrade"
+        element={
+          <Layout>
+            <Upgrade />
           </Layout>
         }
       />
