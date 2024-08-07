@@ -5,6 +5,7 @@ import ActivityReport from "@/pages/ActivityReport";
 import Earn from "@/pages/Earn";
 import FinancialReport from "@/pages/FinancialReport";
 import Home from "@/pages/Home";
+import Profile from "@/pages/Profile";
 import Upgrade from "@/pages/Upgrade";
 import Wallet from "@/pages/Wallet";
 
@@ -56,6 +57,14 @@ export const Router = () => {
         element={
           <Layout>
             <Wallet />
+          </Layout>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <Layout>
+            <Profile />
           </Layout>
         }
       />
