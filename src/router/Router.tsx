@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { Layout } from "@/components/layouts";
 import ActivityReport from "@/pages/ActivityReport";
+import Earn from "@/pages/Earn";
 import FinancialReport from "@/pages/FinancialReport";
 import Home from "@/pages/Home";
 
@@ -29,6 +30,14 @@ export const Router = () => {
         element={
           <Layout>
             <FinancialReport />
+          </Layout>
+        }
+      />
+      <Route
+        path="/earn"
+        element={
+          <Layout>
+            <Earn />
           </Layout>
         }
       />
